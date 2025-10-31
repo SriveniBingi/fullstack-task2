@@ -17,17 +17,17 @@ The application is developed using HTML, CSS, JavaScript, Node.js, Express.js, a
 > 🧰 Technologies Used
 
 **Frontend:**
-> HTML5
-> CSS3 (Custom & Tailwind CSS styling)
-> JavaScript (Dynamic UI + Fetch API)
+> HTML5,
+> CSS3 (Custom & Tailwind CSS styling),
+> JavaScript (Dynamic UI + Fetch API),
 
 **Backend:**
-> Node.js
-> Express.js
->MongoDB with Mongoose
-> JWT (JSON Web Token) for authentication
-> bcrypt for password hashing
-> dotenv for environment variable handling
+> Node.js,
+> Express.js,
+>MongoDB with Mongoose,
+> JWT (JSON Web Token) for authentication,
+> bcrypt for password hashing,
+> dotenv for environment variable handling,
 
 📁 Folder Structure
 fullstack-task2/
