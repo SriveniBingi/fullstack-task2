@@ -1,0 +1,271 @@
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Background gradient  */
+body {
+    background: linear-gradient(to right, #a0a8ff, #c3a1ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container setup */
+.container {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25); /* Stronger shadow */
+    position: relative;
+    overflow: hidden; 
+    width: 900px;
+    max-width: 100%;
+    min-height: 500px;
+}
+
+/* Forms */
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+    /* Round left corners for the card */
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+.container.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+}
+
+/* Form Styling */
+form {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+form h1 {
+    font-weight: 600; /* Slightly bolder */
+    margin-bottom: 5px; 
+}
+
+form span {
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: #888;
+}
+
+input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 8px;
+}
+
+button {
+    border-radius: 25px; /* More rounded */
+    border: none;
+    background-color: #6d28d9; 
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    transition: transform 80ms ease-in;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8b5cf6;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Overlay Section */
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden; /* CRITICAL */
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.overlay {
+    background: linear-gradient(to right, #6d28d9, #8b5cf6);
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+    display: flex;
+}
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+/* Overlay Panels Base */
+.overlay-panel {
+    /*background: linear-gradient(to right, #6d28d9, #8b5cf6);*/
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* ✅ LEFT PANEL — curve is on the right (Sign In) */
+.overlay-left {
+    left: 0;
+}
+
+/* ✅ RIGHT PANEL — curve is on the left (Sign Up) */
+.overlay-right {
+    right: 0;
+}
+
+.overlay-panel h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.overlay-panel p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 15px 0 30px;
+}
+
+.ghost {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+/* Movement (Keep your existing logic) */
+.overlay-left {
+    transform: translateX(-20%);
+}
+.container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.overlay-right {
+    transform: translateX(0);
+}
+.container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+/* Dashboard styling */
+.dashboard-body {
+  background: linear-gradient(to right, #8b5cf6, #6d28d9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.dashboard-container {
+  background: #fff;
+  color: #333;
+  padding: 40px 60px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+}
+
+.dashboard-container h1 {
+  color: #6d28d9;
+  margin-bottom: 10px;
+}
+
+.dashboard-container button {
+  margin-top: 20px;
+  background-color: #8b5cf6;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 35px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dashboard-container button:hover {
+  background-color: #6d28d9;
+}
+/* Message styling with fade effect */
+.form-msg {
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.form-msg.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-msg.success {
+  color: #22c55e; /* green */
+}
+
+.form-msg.error {
+  color: #ef4444; /* red */
+}

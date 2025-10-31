@@ -1,0 +1,25 @@
+# Ignore dependencies
+node_modules/
+
+# Ignore environment variables
+.env
+#ignore packages
+package-lock.json
+package.json
+
+# Logs
+logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor & cache folders
+.vscode/
+*.tmp
+*.swp
+
+# Build or dist folders
+dist/
+build/
