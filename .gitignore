@@ -3,7 +3,8 @@ node_modules/
 
 # Ignore environment variables
 .env
-#ignore packages
+
+# Ignore packages
 package-lock.json
 package.json
 
